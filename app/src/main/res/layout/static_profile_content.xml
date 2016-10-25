@@ -1,0 +1,135 @@
+<android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="@dimen/spacing_normal_16"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/spacing_normal_16"
+        android:paddingRight="@dimen/spacing_normal_16">
+
+        <LinearLayout
+            style="@style/linear">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="@dimen/spacing_small_8"
+                android:src="@drawable/indicator"/>
+
+            <TextView
+                style="@style/text"
+                android:text="Words:"/>
+
+            <TextView
+                android:id="@+id/character_word"
+                style="@style/text.desc"
+                android:layout_weight="0.3"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/linear"
+            android:layout_marginTop="@dimen/spacing_small_8">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="@dimen/spacing_small_8"
+                android:src="@drawable/indicator"/>
+
+            <TextView
+                style="@style/text"
+                android:text="Born:"/>
+
+            <TextView
+                android:id="@+id/character_born"
+                style="@style/text.desc"
+                android:layout_weight="0.3"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/linear"
+            android:layout_marginTop="@dimen/spacing_small_8">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="@dimen/spacing_small_8"
+                android:src="@drawable/indicator"/>
+
+            <TextView
+                style="@style/text"
+                android:text="Titles:"/>
+
+            <TextView
+                android:id="@+id/character_titles"
+                style="@style/text.desc"
+                android:layout_weight="0.3"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/linear"
+            android:layout_marginTop="@dimen/spacing_small_8">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="@dimen/spacing_small_8"
+                android:src="@drawable/indicator"/>
+
+            <TextView
+                style="@style/text"
+                android:text="Aliases:"/>
+
+            <TextView
+                android:id="@+id/character_aliases"
+                style="@style/text.desc"
+                android:layout_weight="0.3"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/linear"
+            android:layout_marginTop="@dimen/spacing_small_8">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="@dimen/spacing_small_8"/>
+
+            <TextView
+                style="@style/text"
+                android:text="Father:"/>
+
+            <TextView
+                android:id="@+id/character_father"
+                style="@style/text.desc"
+                android:layout_weight="0.3"/>
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/linear"
+            android:layout_marginTop="@dimen/spacing_small_8">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="@dimen/spacing_small_8"/>
+
+            <TextView
+                style="@style/text"
+                android:text="Mother:"/>
+
+            <TextView
+                android:id="@+id/character_mother"
+                style="@style/text.desc"
+                android:layout_weight="0.3"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>

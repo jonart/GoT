@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\com.google.code.findbugs\jsr305\2.0.1\516c03b21d50a644d538de0f0369c620989cd8f0\jsr305-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="516c03b21d50a644d538de0f0369c620989cd8f0">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\jsr305-2.0.1_63a8f0b0ead0e424dd042bc6818cc324bb70924d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_252b1aa9e417af9b55ce9c774dd9a05896692664\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d25223efc5a0ada873989832aae2a97c3952b3a5">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_beef4f51af4af7e9920275e1a669fcf1834ac167\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_f71174cfc0f77c39243423938e85e542007483e0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\exploded-aar\com.facebook.stetho\stetho-okhttp3\1.4.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7ff6b36b86cc5d50475d396ee60671200dbe419c">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.stetho-stetho-okhttp3-1.4.1_934788bd62c29dcdaa437845a3061d553459b002\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_4e09a07a7254f1b6e8c1a8a14dbddfcd519aff5b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations-java5\15.0\7011b4551a8451906759b05814c58b9eb829ea9b\annotations-java5-15.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="7011b4551a8451906759b05814c58b9eb829ea9b">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\annotations-java5-15.0_b436d4e6f6f9d4e2137c718fe078383f74da1022\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_73ba6842b1f9fb5c5fa2c6b5babc8811be31d34c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="955445bad8ce21fcdc89aba572a93ea00c1350da">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_b2e11dbb79e19b3821650b694cd251d5518f8054\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.7\751f548c85fa49f330cecbb1875893f971b33c4e\gson-2.7.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.7_33b148bdcb032a43e8a4d07e541e73b7c9a6190f\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.1.0\aa557d71ead91cbf26e0c316a0f593d168303309\converter-gson-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.1.0_ddd52c3e837649af8595dbdf76bfb4cff3c01cfa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_c0da5df59d2d3e18b4656c9aa97609cb83c16f23\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_fc18a0fdc80391aaf9a93e629f1a6f03cf6a9cf4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.4.0_6baa59f3a674e6c510d506a61151cb4e470bc73b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.3.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="82ce13fd19cdfde0e392f03c27edeba8d4333648">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-23.3.0_ab236fb52764bd2d89e91ea6d8b06b8f62d8ed85\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.9.0\f824591a0016efbaeddb8300bee54832a1398cfa\okio-1.9.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f824591a0016efbaeddb8300bee54832a1398cfa">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.9.0_5698b1272d1373c20ee4420daddab566af567fde\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.1.0\2de7cd8b95b7021b1d597f049bcb422055119f2c\retrofit-2.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.1.0_5e87f4189b2a65275287067a41d9301412fe3e05\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\com.jakewharton.picasso\picasso2-okhttp3-downloader\1.1.0\f4f77eb62269c977c154765cd01587eda6488273\picasso2-okhttp3-downloader-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f4f77eb62269c977c154765cd01587eda6488273">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso2-okhttp3-downloader-1.1.0_47211e49858a5681d08c7a844661ad51e9323e87\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\org.greenrobot\greendao\3.2.0\e70040568b2929b8e5869ad1ffca8e4386dc53bc\greendao-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e70040568b2929b8e5869ad1ffca8e4386dc53bc">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\greendao-3.2.0_7e9533ed096e514f75004b4d0925ec3c2084ef9b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\commons-cli\commons-cli\1.2\2bf96b7aa8b611c177d329452af1dc933e14501c\commons-cli-1.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2bf96b7aa8b611c177d329452af1dc933e14501c">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\commons-cli-1.2_395b25f578e9486044248a0ecead6ec32bca0e3e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.4.1\c7c4f9e35c2fd5900da24f9872e3971801f08ce0\okhttp-3.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c7c4f9e35c2fd5900da24f9872e3971801f08ce0">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.4.1_5b324ec820c8ca6dc4ceaae5d35e4fcc91ba7718\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\exploded-aar\com.facebook.stetho\stetho\1.4.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="26b6f0185cbba8917ba9d9d0bd170f95311622ab">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.facebook.stetho-stetho-1.4.1_3feedc8dc6b9c0599d90c9434c406b3bf66179b0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\org.greenrobot\greendao-api\3.2.0\c6d610abe1d75d758431c9234917a349abc0a0ac\greendao-api-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c6d610abe1d75d758431c9234917a349abc0a0ac">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\greendao-api-3.2.0_302c563a84ea817674d3ee7cf5968dbcecca41b8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\root\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\logging-interceptor\3.4.1\381fc1096ba65040d8e80ea43b2e1d9bad02345e\logging-interceptor-3.4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="381fc1096ba65040d8e80ea43b2e1d9bad02345e">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\logging-interceptor-3.4.1_440621b167b9daf9680911ffcccfecb822c5a214\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_c5dd0acbf1201c47ea97c2b039b9ff05282239fc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="D:\YandexDisk\Code\Android\MiddleGoT\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_68b0214f6f2190dcb8234b6f7ba7fbb91dcc524a\classes.dex" />
+    </item>
+
+</items>
