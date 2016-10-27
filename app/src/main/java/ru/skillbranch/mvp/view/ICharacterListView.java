@@ -2,15 +2,13 @@ package ru.skillbranch.mvp.view;
 
 import android.support.v4.view.ViewPager;
 
-/**
- * Created by root on 23.10.2016.
- */
+import ru.skillbranch.mvp.presenter.CharacterListScreenPresenter;
 
 public interface ICharacterListView {
 
     void setupToolbar();
-    void setupViewPager(ViewPager viewPager);
 
+    CharacterListScreenPresenter getPresenter();
 
-    ICharacterListView getPresenter();
+    void setPage(int pageNumber);
 }

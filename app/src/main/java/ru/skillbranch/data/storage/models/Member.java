@@ -1,27 +1,20 @@
-package ru.skillbranch.data.network.database;
+package ru.skillbranch.data.storage.models;
 
 import org.greenrobot.greendao.annotation.Entity;
 import org.greenrobot.greendao.annotation.Unique;
 import org.greenrobot.greendao.annotation.Generated;
 import org.greenrobot.greendao.DaoException;
 
-import ru.skillbranch.data.storage.models.UserModelRes;
-
-/**
- * Created by root on 18.10.2016.
- */
+import ru.skillbranch.data.network.responses.UserModelRes;
 
 @Entity(active = true, nameInDb = "MEMBERS")
 public class Member {
 
+    @Unique
     private String url;
-    
+
     @Unique
     private String name;
-
-    private String gender;
-
-    private String culture;
 
     private String born;
 
@@ -35,9 +28,19 @@ public class Member {
 
     private String mother;
 
-    private String spouse;
-
     private String words;
+
+    public Member(UserModelRes userModelRes, String wordsString) {
+        url = userModelRes.getUrl();
+        name = userModelRes.getName();
+        born = userModelRes.getBorn();
+        died = userModelRes.getDied();
+        titles = userModelRes.getTitles().toString();
+        aliases = userModelRes.getAliases().toString();
+        father = userModelRes.getFather();
+        mother = userModelRes.getMother();
+        words = wordsString;
+    }
 
     /**
      * Convenient call for {@link org.greenrobot.greendao.AbstractDao#refresh(Object)}.
@@ -100,14 +103,6 @@ public class Member {
         this.words = words;
     }
 
-    public String getSpouse() {
-        return this.spouse;
-    }
-
-    public void setSpouse(String spouse) {
-        this.spouse = spouse;
-    }
-
     public String getMother() {
         return this.mother;
     }
@@ -156,22 +151,6 @@ public class Member {
         this.born = born;
     }
 
-    public String getCulture() {
-        return this.culture;
-    }
-
-    public void setCulture(String culture) {
-        this.culture = culture;
-    }
-
-    public String getGender() {
-        return this.gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public String getName() {
         return this.name;
     }
@@ -188,40 +167,22 @@ public class Member {
         this.url = url;
     }
 
-    @Generated(hash = 530765582)
-    public Member(String url, String name, String gender, String culture, String born,
-            String died, String titles, String aliases, String father, String mother,
-            String spouse, String words) {
+    @Generated(hash = 1522391737)
+    public Member(String url, String name, String born, String died, String titles,
+            String aliases, String father, String mother, String words) {
         this.url = url;
         this.name = name;
-        this.gender = gender;
-        this.culture = culture;
         this.born = born;
         this.died = died;
         this.titles = titles;
         this.aliases = aliases;
         this.father = father;
         this.mother = mother;
-        this.spouse = spouse;
         this.words = words;
     }
 
     @Generated(hash = 367284327)
     public Member() {
-    }
 
-    public Member(UserModelRes userModelRes, String words) {
-        this.url = userModelRes.getUrl();
-        this.name = userModelRes.getName();
-        this.gender = userModelRes.getGender();
-        this.culture = userModelRes.getCulture();
-        this.born = userModelRes.getBorn();
-        this.died = userModelRes.getDied();
-        this.titles = userModelRes.getTitles().toString();
-        this.aliases = userModelRes.getAliases().toString();
-        this.father = userModelRes.getFather();
-        this.mother = userModelRes.getMother();
-        this.spouse = userModelRes.getSpouse();
-        this.words = words;
     }
 }

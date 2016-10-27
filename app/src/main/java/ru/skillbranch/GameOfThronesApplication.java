@@ -1,36 +1,33 @@
-package ru.skillbranch.data;
+package ru.skillbranch;
 
 import com.facebook.stetho.Stetho;
 
 import org.greenrobot.greendao.database.Database;
+
 import android.app.Application;
 import android.content.Context;
 
-import ru.skillbranch.data.network.database.DaoMaster;
-import ru.skillbranch.data.network.database.DaoSession;
+import ru.skillbranch.data.storage.models.DaoMaster;
+import ru.skillbranch.data.storage.models.DaoSession;
 
-/**
- * Created by root on 20.10.2016.
- */
-
-public class IceAndFire extends Application{
+public class GameOfThronesApplication extends Application {
 
     private static Context sContext;
     private static DaoSession sDaoSession;
 
-    public static Context getContext() {
-        return sContext;
-    }
-
     @Override
     public void onCreate() {
         super.onCreate();
-        sContext = getApplicationContext();
-        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this,"iceandfire-db");
+        sContext = this;
+        DaoMaster.DevOpenHelper helper = new DaoMaster.DevOpenHelper(this, "iceandfire-db");
         Database db = helper.getWritableDb();
         sDaoSession = new DaoMaster(db).newSession();
 
         Stetho.initializeWithDefaults(this);
+    }
+
+    public static Context getContext() {
+        return sContext;
     }
 
     public static DaoSession getDaoSession() {

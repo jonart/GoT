@@ -2,10 +2,10 @@ package ru.skillbranch.mvp.model;
 
 import android.content.Context;
 
-import ru.skillbranch.data.network.DataManager;
-import ru.skillbranch.data.network.database.DaoSession;
-import ru.skillbranch.data.network.database.Member;
-import ru.skillbranch.data.network.database.MemberDao;
+import ru.skillbranch.data.managers.DataManager;
+import ru.skillbranch.data.storage.models.DaoSession;
+import ru.skillbranch.data.storage.models.Member;
+import ru.skillbranch.data.storage.models.MemberDao;
 
 /**
  * Created by root on 23.10.2016.

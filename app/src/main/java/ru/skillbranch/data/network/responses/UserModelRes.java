@@ -1,8 +1,4 @@
-package ru.skillbranch.data.storage.models;
-
-/**
- * Created by root on 18.10.2016.
- */
+package ru.skillbranch.data.network.responses;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -70,14 +66,6 @@ public class UserModelRes {
         return name;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public String getCulture() {
-        return culture;
-    }
-
     public String getBorn() {
         return born;
     }
@@ -100,30 +88,6 @@ public class UserModelRes {
 
     public String getMother() {
         return mother;
-    }
-
-    public String getSpouse() {
-        return spouse;
-    }
-
-    public List<String> getAllegiances() {
-        return allegiances;
-    }
-
-    public List<String> getBooks() {
-        return books;
-    }
-
-    public List<String> getPovBooks() {
-        return povBooks;
-    }
-
-    public List<String> getTvSeries() {
-        return tvSeries;
-    }
-
-    public List<String> getPlayedBy() {
-        return playedBy;
     }
 
 }

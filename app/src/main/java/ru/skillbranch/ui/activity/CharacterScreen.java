@@ -9,21 +9,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import ru.skillbranch.data.utils.ConstantManager;
+import ru.skillbranch.utils.ConstantManager;
 import ru.skillbranch.got.R;
 import ru.skillbranch.mvp.presenter.CharacterScreenPresenter;
-import ru.skillbranch.data.network.DataManager;
-import ru.skillbranch.data.network.database.Member;
+import ru.skillbranch.data.managers.DataManager;
+import ru.skillbranch.data.storage.models.Member;
 
 public class CharacterScreen extends BaseActivity {
     CharacterScreenPresenter mCharacterScreenPresenter = CharacterScreenPresenter.getInstance();
 
-    private CoordinatorLayout mCoordinatorLayout;
     private Toolbar mToolbar;
     private TextView mWords, mBorn, mTitles, mAliases, mFather, mMother;
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
     private ImageView mHouseImg;
-    private DataManager mDataManager;
     private Member mMember;
 
     @Override
@@ -41,14 +39,13 @@ public class CharacterScreen extends BaseActivity {
         mMother = (TextView) findViewById(R.id.character_mother);
         mCollapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
 
-        mDataManager = DataManager.getInstance();
         setupToolbar();
         initProfileData();
     }
 
 
     public void initProfileData(){
-        String url = getIntent().getStringExtra(ConstantManager.PARCELABLE_KEY);
+        String url = getIntent().getStringExtra(ConstantManager.URL_KEY);
         mMember = mCharacterScreenPresenter.getUserData(url);
 
         switch (mMember.getWords()){
@@ -64,17 +61,17 @@ public class CharacterScreen extends BaseActivity {
             default:
                 break;
         }
-        mWords.setText(mMember.getWords().toString());
-        mBorn.setText(mMember.getBorn().toString());
-        mTitles.setText(mMember.getTitles().toString());
-        mAliases.setText(mMember.getAliases().toString());
-        mFather.setText(mMember.getFather().toString());
-        mMother.setText(mMember.getMother().toString());
+        mWords.setText(mMember.getWords());
+        mBorn.setText(mMember.getBorn());
+        mTitles.setText(mMember.getTitles());
+        mAliases.setText(mMember.getAliases());
+        mFather.setText(mMember.getFather());
+        mMother.setText(mMember.getMother());
         if(!mMember.getDied().isEmpty()){
             Toast.makeText(this,"Персонаж погиб " + mMember.getDied(),Toast.LENGTH_LONG).show();
         }
 
-        mCollapsingToolbarLayout.setTitle(mMember.getName().toString());
+        mCollapsingToolbarLayout.setTitle(mMember.getName());
     }
 
     @Override

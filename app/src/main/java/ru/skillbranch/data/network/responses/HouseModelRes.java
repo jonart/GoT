@@ -1,14 +1,10 @@
-package ru.skillbranch.data.storage.models;
+package ru.skillbranch.data.network.responses;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.ArrayList;
 import java.util.List;
-
-/**
- * Created by root on 19.10.2016.
- */
 
 public class HouseModelRes {
 
@@ -61,31 +57,12 @@ public class HouseModelRes {
     @Expose
     private List<String> swornMembers = new ArrayList<String>();
 
-    public List<String> getSwornMembers() {
-        return swornMembers;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public String getCoatOfArms() {
-        return coatOfArms;
-    }
-
     public String getWords() {
         return words;
     }
 
-    public List<String> getTitles() {
-        return titles;
+    public List<String> getSwornMembers() {
+        return swornMembers;
     }
+
 }

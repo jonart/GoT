@@ -1,24 +1,37 @@
 package ru.skillbranch.ui.activity;
 
 import android.app.ProgressDialog;
-import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import ru.skillbranch.got.R;
 
-/**
- * Created by root on 20.10.2016.
- */
-
 public class BaseActivity extends AppCompatActivity {
 
     protected ProgressDialog mProgressDialog;
-    private Context sContex;
 
-    public Context getsContex() {
-        return sContex;
-
+    protected void showProgress() {
+        if (mProgressDialog == null) {
+            mProgressDialog = new ProgressDialog(this, R.style.custom_dialog);
+            mProgressDialog.setCancelable(false);
+            mProgressDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+            mProgressDialog.show();
+            mProgressDialog.setContentView(R.layout.progress_splash);
+        } else {
+            mProgressDialog.show();
+            mProgressDialog.setContentView(R.layout.progress_splash);
+            finish();
+        }
     }
+
+    protected void hideProgress() {
+        if(mProgressDialog != null){
+            if(mProgressDialog.isShowing()){
+                mProgressDialog.dismiss();
+            }
+        }
+    }
+
 }

@@ -14,93 +14,68 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
-import ru.skillbranch.data.RecyclerAdapter;
-import ru.skillbranch.data.utils.ConstantManager;
+import ru.skillbranch.ui.adapters.RecyclerAdapter;
+import ru.skillbranch.utils.ConstantManager;
 import ru.skillbranch.mvp.presenter.FragmentPresenter;
 import ru.skillbranch.mvp.presenter.IFragmentPresenter;
-import ru.skillbranch.data.network.DataManager;
-import ru.skillbranch.data.network.database.Member;
+import ru.skillbranch.data.storage.models.Member;
 import ru.skillbranch.mvp.view.IFragmentView;
 import ru.skillbranch.ui.activity.CharacterScreen;
 import ru.skillbranch.got.R;
 
-/**
- * Created by root on 20.10.2016.
- */
+public class HouseListFragment extends Fragment implements IFragmentView, RecyclerAdapter.MemberViewHolder.ItemClickListener {
+    FragmentPresenter mPresenter = FragmentPresenter.getInstance();
 
-public class HouseListFragment extends Fragment implements IFragmentView{
-    FragmentPresenter mFragmentPresenter = FragmentPresenter.getInstance();
-
-    private DataManager mDataManager;
-    private RecyclerView mRecyclerView;
-    private LinearLayoutManager mLayoutManager;
-    private RecyclerAdapter mAdapter;
     private List<Member> mMembers;
-    private RecyclerAdapter mRecyclerAdapter;
-    private Member mMember;
-
 
     public HouseListFragment() {
-    }
 
+    }
 
     public static HouseListFragment newInstance(int id) {
         Bundle args = new Bundle();
-        args.putInt(ConstantManager.HOUSE_ID,id);
+        args.putInt(ConstantManager.HOUSE_ID, id);
         HouseListFragment fragment = new HouseListFragment();
         fragment.setArguments(args);
         return fragment;
     }
 
-
-
-
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mDataManager = DataManager.getInstance();
-        mFragmentPresenter.takeView(this);
-        mFragmentPresenter.initView();
-        int id = getArguments().getInt(ConstantManager.HOUSE_ID);
-        mMembers = mFragmentPresenter.getUser(id);
+        mPresenter.takeView(this);
+        mPresenter.initView();
+        mMembers = mPresenter.getMembers(getArguments().getInt(ConstantManager.HOUSE_ID));
     }
-
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_one,container,false);
+        View view = inflater.inflate(R.layout.fragment_one, container, false);
 
-
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
-
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        showUsers(mMembers);
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycle_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        RecyclerAdapter recyclerAdapter =
+                new RecyclerAdapter(mMembers, getArguments().getInt(ConstantManager.HOUSE_ID), this);
+        recyclerView.swapAdapter(recyclerAdapter, false);
 
         return view;
     }
 
-    public void showUsers(List<Member> members){
-        mMembers = members;
-
-        mRecyclerAdapter = new RecyclerAdapter(mMembers, getArguments().getInt(ConstantManager.HOUSE_ID), new RecyclerAdapter.MemberViewHolder.CustomClickListener(){
-            @Override
-            public void onUserItemClickListener(int position){
-                Intent profileIntent = new Intent(getActivity(), CharacterScreen.class);
-                profileIntent.putExtra(ConstantManager.PARCELABLE_KEY, mMembers.get(position).getUrl());
-
-                startActivity(profileIntent);
-            }
-
-        });
-
-        mRecyclerView.swapAdapter(mRecyclerAdapter, false);
-    }
-
-
     @Override
     public IFragmentPresenter getPresenter() {
-        return null;
+        return mPresenter;
+    }
+
+    @Override
+    public void showMemberProfile(int position) {
+        Intent profileIntent = new Intent(getActivity(), CharacterScreen.class);
+        profileIntent.putExtra(ConstantManager.URL_KEY, mMembers.get(position).getUrl());
+        startActivity(profileIntent);
+    }
+
+    @Override
+    public void onUserItemClick(int position) {
+        mPresenter.onListItemClick(position);
     }
 }

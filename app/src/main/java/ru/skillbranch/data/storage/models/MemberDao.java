@@ -1,4 +1,4 @@
-package ru.skillbranch.data.network.database;
+package ru.skillbranch.data.storage.models;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteStatement;
@@ -24,16 +24,13 @@ public class MemberDao extends AbstractDao<Member, Void> {
     public static class Properties {
         public final static Property Url = new Property(0, String.class, "url", false, "URL");
         public final static Property Name = new Property(1, String.class, "name", false, "NAME");
-        public final static Property Gender = new Property(2, String.class, "gender", false, "GENDER");
-        public final static Property Culture = new Property(3, String.class, "culture", false, "CULTURE");
-        public final static Property Born = new Property(4, String.class, "born", false, "BORN");
-        public final static Property Died = new Property(5, String.class, "died", false, "DIED");
-        public final static Property Titles = new Property(6, String.class, "titles", false, "TITLES");
-        public final static Property Aliases = new Property(7, String.class, "aliases", false, "ALIASES");
-        public final static Property Father = new Property(8, String.class, "father", false, "FATHER");
-        public final static Property Mother = new Property(9, String.class, "mother", false, "MOTHER");
-        public final static Property Spouse = new Property(10, String.class, "spouse", false, "SPOUSE");
-        public final static Property Words = new Property(11, String.class, "words", false, "WORDS");
+        public final static Property Born = new Property(2, String.class, "born", false, "BORN");
+        public final static Property Died = new Property(3, String.class, "died", false, "DIED");
+        public final static Property Titles = new Property(4, String.class, "titles", false, "TITLES");
+        public final static Property Aliases = new Property(5, String.class, "aliases", false, "ALIASES");
+        public final static Property Father = new Property(6, String.class, "father", false, "FATHER");
+        public final static Property Mother = new Property(7, String.class, "mother", false, "MOTHER");
+        public final static Property Words = new Property(8, String.class, "words", false, "WORDS");
     }
 
     private DaoSession daoSession;
@@ -52,18 +49,15 @@ public class MemberDao extends AbstractDao<Member, Void> {
     public static void createTable(Database db, boolean ifNotExists) {
         String constraint = ifNotExists? "IF NOT EXISTS ": "";
         db.execSQL("CREATE TABLE " + constraint + "\"MEMBERS\" (" + //
-                "\"URL\" TEXT," + // 0: url
+                "\"URL\" TEXT UNIQUE ," + // 0: url
                 "\"NAME\" TEXT UNIQUE ," + // 1: name
-                "\"GENDER\" TEXT," + // 2: gender
-                "\"CULTURE\" TEXT," + // 3: culture
-                "\"BORN\" TEXT," + // 4: born
-                "\"DIED\" TEXT," + // 5: died
-                "\"TITLES\" TEXT," + // 6: titles
-                "\"ALIASES\" TEXT," + // 7: aliases
-                "\"FATHER\" TEXT," + // 8: father
-                "\"MOTHER\" TEXT," + // 9: mother
-                "\"SPOUSE\" TEXT," + // 10: spouse
-                "\"WORDS\" TEXT);"); // 11: words
+                "\"BORN\" TEXT," + // 2: born
+                "\"DIED\" TEXT," + // 3: died
+                "\"TITLES\" TEXT," + // 4: titles
+                "\"ALIASES\" TEXT," + // 5: aliases
+                "\"FATHER\" TEXT," + // 6: father
+                "\"MOTHER\" TEXT," + // 7: mother
+                "\"WORDS\" TEXT);"); // 8: words
     }
 
     /** Drops the underlying database table. */
@@ -86,54 +80,39 @@ public class MemberDao extends AbstractDao<Member, Void> {
             stmt.bindString(2, name);
         }
  
-        String gender = entity.getGender();
-        if (gender != null) {
-            stmt.bindString(3, gender);
-        }
- 
-        String culture = entity.getCulture();
-        if (culture != null) {
-            stmt.bindString(4, culture);
-        }
- 
         String born = entity.getBorn();
         if (born != null) {
-            stmt.bindString(5, born);
+            stmt.bindString(3, born);
         }
  
         String died = entity.getDied();
         if (died != null) {
-            stmt.bindString(6, died);
+            stmt.bindString(4, died);
         }
  
         String titles = entity.getTitles();
         if (titles != null) {
-            stmt.bindString(7, titles);
+            stmt.bindString(5, titles);
         }
  
         String aliases = entity.getAliases();
         if (aliases != null) {
-            stmt.bindString(8, aliases);
+            stmt.bindString(6, aliases);
         }
  
         String father = entity.getFather();
         if (father != null) {
-            stmt.bindString(9, father);
+            stmt.bindString(7, father);
         }
  
         String mother = entity.getMother();
         if (mother != null) {
-            stmt.bindString(10, mother);
-        }
- 
-        String spouse = entity.getSpouse();
-        if (spouse != null) {
-            stmt.bindString(11, spouse);
+            stmt.bindString(8, mother);
         }
  
         String words = entity.getWords();
         if (words != null) {
-            stmt.bindString(12, words);
+            stmt.bindString(9, words);
         }
     }
 
@@ -151,54 +130,39 @@ public class MemberDao extends AbstractDao<Member, Void> {
             stmt.bindString(2, name);
         }
  
-        String gender = entity.getGender();
-        if (gender != null) {
-            stmt.bindString(3, gender);
-        }
- 
-        String culture = entity.getCulture();
-        if (culture != null) {
-            stmt.bindString(4, culture);
-        }
- 
         String born = entity.getBorn();
         if (born != null) {
-            stmt.bindString(5, born);
+            stmt.bindString(3, born);
         }
  
         String died = entity.getDied();
         if (died != null) {
-            stmt.bindString(6, died);
+            stmt.bindString(4, died);
         }
  
         String titles = entity.getTitles();
         if (titles != null) {
-            stmt.bindString(7, titles);
+            stmt.bindString(5, titles);
         }
  
         String aliases = entity.getAliases();
         if (aliases != null) {
-            stmt.bindString(8, aliases);
+            stmt.bindString(6, aliases);
         }
  
         String father = entity.getFather();
         if (father != null) {
-            stmt.bindString(9, father);
+            stmt.bindString(7, father);
         }
  
         String mother = entity.getMother();
         if (mother != null) {
-            stmt.bindString(10, mother);
-        }
- 
-        String spouse = entity.getSpouse();
-        if (spouse != null) {
-            stmt.bindString(11, spouse);
+            stmt.bindString(8, mother);
         }
  
         String words = entity.getWords();
         if (words != null) {
-            stmt.bindString(12, words);
+            stmt.bindString(9, words);
         }
     }
 
@@ -218,16 +182,13 @@ public class MemberDao extends AbstractDao<Member, Void> {
         Member entity = new Member( //
             cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0), // url
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // name
-            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // gender
-            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // culture
-            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // born
-            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // died
-            cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // titles
-            cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // aliases
-            cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8), // father
-            cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9), // mother
-            cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10), // spouse
-            cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11) // words
+            cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // born
+            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // died
+            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // titles
+            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // aliases
+            cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // father
+            cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7), // mother
+            cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8) // words
         );
         return entity;
     }
@@ -236,16 +197,13 @@ public class MemberDao extends AbstractDao<Member, Void> {
     public void readEntity(Cursor cursor, Member entity, int offset) {
         entity.setUrl(cursor.isNull(offset + 0) ? null : cursor.getString(offset + 0));
         entity.setName(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
-        entity.setGender(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
-        entity.setCulture(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
-        entity.setBorn(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
-        entity.setDied(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
-        entity.setTitles(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
-        entity.setAliases(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
-        entity.setFather(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
-        entity.setMother(cursor.isNull(offset + 9) ? null : cursor.getString(offset + 9));
-        entity.setSpouse(cursor.isNull(offset + 10) ? null : cursor.getString(offset + 10));
-        entity.setWords(cursor.isNull(offset + 11) ? null : cursor.getString(offset + 11));
+        entity.setBorn(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
+        entity.setDied(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
+        entity.setTitles(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
+        entity.setAliases(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
+        entity.setFather(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
+        entity.setMother(cursor.isNull(offset + 7) ? null : cursor.getString(offset + 7));
+        entity.setWords(cursor.isNull(offset + 8) ? null : cursor.getString(offset + 8));
      }
     
     @Override

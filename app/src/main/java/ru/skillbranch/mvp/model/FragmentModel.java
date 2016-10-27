@@ -5,24 +5,18 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
-import ru.skillbranch.data.utils.ConstantManager;
-import ru.skillbranch.data.network.DataManager;
-import ru.skillbranch.data.network.database.DaoSession;
-import ru.skillbranch.data.network.database.Member;
-import ru.skillbranch.data.network.database.MemberDao;
-
-/**
- * Created by root on 23.10.2016.
- */
+import ru.skillbranch.utils.ConstantManager;
+import ru.skillbranch.data.managers.DataManager;
+import ru.skillbranch.data.storage.models.DaoSession;
+import ru.skillbranch.data.storage.models.Member;
+import ru.skillbranch.data.storage.models.MemberDao;
 
 public class FragmentModel {
     private DataManager mDataManager;
     private DaoSession mDaoSession;
-    private Context mContext;
 
     public FragmentModel(){
         mDataManager = DataManager.getInstance();
-        mContext = mDataManager.getContext();
         mDaoSession = mDataManager.getDaoSession();
     }
 

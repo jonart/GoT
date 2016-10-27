@@ -1,106 +1,48 @@
 package ru.skillbranch.mvp.model;
 
-import android.content.Context;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.OkHttpClient;
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import ru.skillbranch.data.RestApi;
-import ru.skillbranch.data.storage.models.HouseModelRes;
-import ru.skillbranch.data.storage.models.UserModelRes;
-import ru.skillbranch.data.network.DataManager;
-import ru.skillbranch.data.network.database.DaoSession;
-import ru.skillbranch.data.network.database.Member;
-
-/**
- * Created by root on 23.10.2016.
- */
+import ru.skillbranch.data.managers.DataManager;
+import ru.skillbranch.data.network.responses.HouseModelRes;
+import ru.skillbranch.data.network.responses.UserModelRes;
+import ru.skillbranch.data.storage.models.DaoSession;
+import ru.skillbranch.data.storage.models.Member;
 
 public class SplashModel {
     private DataManager mDataManager;
     private DaoSession mDaoSession;
-    private Context mContext;
 
-    public SplashModel(){
+    public SplashModel() {
         mDataManager = DataManager.getInstance();
-        mContext = mDataManager.getContext();
         mDaoSession = mDataManager.getDaoSession();
     }
 
-    public boolean getIsDataNull(){
-        List<Member> list;
-
-        list = mDaoSession.queryBuilder(Member.class)
-                .build()
-                .list();
-        if(list.isEmpty()) return true;
-        else return false;
+    public boolean isDbEmpty() {
+        return mDaoSession.queryBuilder(Member.class).build().list().isEmpty();
     }
 
-    public void addUserToDB() {
-        OkHttpClient.Builder okhttp = new OkHttpClient.Builder();
-        HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-//        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-//        okhttp.addInterceptor(loggingInterceptor);
-
-        Retrofit.Builder retrofitBuilder = new Retrofit.Builder()
-                .baseUrl("http://anapioficeandfire.com/api/")
-                .addConverterFactory(GsonConverterFactory.create());
-
-        Retrofit retrofit = retrofitBuilder
-                .client(okhttp.build())
-                .build();
-
-        final RestApi service = retrofit.create(RestApi.class);
+    public void loadUsersToDB() {
 
         List<String> listHouse = new ArrayList<>();
         listHouse.add("houses/229");
         listHouse.add("houses/362");
         listHouse.add("houses/378");
 
-
         for (int i = 0; i < listHouse.size(); i++) {
-            Call<HouseModelRes> call = service.getHouse(listHouse.get(i));
-
+            Call<HouseModelRes> call = mDataManager.getHouse(listHouse.get(i));
             call.enqueue(new Callback<HouseModelRes>() {
                 @Override
                 public void onResponse(Call<HouseModelRes> call, Response<HouseModelRes> response) {
                     if (response.code() == 200) {
-
-
                         List<String> list = response.body().getSwornMembers();
-                        final String words = response.body().getWords();
-                        System.out.println("_" + words + "_");
-
+                        String words = response.body().getWords();
                         for (int i = 0; i < list.size(); i++) {
-                            Call<UserModelRes> callMember = service.callMember(list.get(i));
-                            callMember.enqueue(new Callback<UserModelRes>() {
-                                @Override
-                                public void onResponse(Call<UserModelRes> call, Response<UserModelRes> response) {
-                                    if(response.code() == 200){
-                                        Member members = new Member(response.body(), words);
-                                        mDaoSession.getMemberDao().insertOrReplace(members);
-                                    }
-                                    else{
-
-                                    }
-                                }
-
-                                @Override
-                                public void onFailure(Call<UserModelRes> call, Throwable t) {
-                                    System.out.println("FUCK");
-                                }
-                            });
+                            loadMember(list.get(i), words);
                         }
-
-
                     } else {
                         System.out.println(":-(");
                     }
@@ -112,5 +54,23 @@ public class SplashModel {
                 }
             });
         }
+    }
+
+    private void loadMember(String url, final String words) {
+        Call<UserModelRes> callMember = mDataManager.getMember(url);
+        callMember.enqueue(new Callback<UserModelRes>() {
+            @Override
+            public void onResponse(Call<UserModelRes> call, Response<UserModelRes> response) {
+                if (response.code() == 200) {
+                    Member members = new Member(response.body(), words);
+                    mDaoSession.getMemberDao().insertOrReplace(members);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserModelRes> call, Throwable t) {
+                System.out.println("FUCK");
+            }
+        });
     }
 }

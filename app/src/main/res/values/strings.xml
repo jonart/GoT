@@ -3,4 +3,5 @@
     <string name="starkHouse">STARKS</string>
     <string name="lannistersHouse">LANNISTERS</string>
     <string name="tangaryensHouse">TANGARYENS</string>
+    <string name="something_wrong">Что-то пошло не так</string>
 </resources>

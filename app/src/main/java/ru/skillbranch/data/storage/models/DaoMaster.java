@@ -1,4 +1,4 @@
-package ru.skillbranch.data.network.database;
+package ru.skillbranch.data.storage.models;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

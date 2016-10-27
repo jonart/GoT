@@ -4,10 +4,6 @@ import javax.annotation.Nullable;
 
 import ru.skillbranch.mvp.view.ISplashView;
 
-/**
- * Created by root on 23.10.2016.
- */
-
 public interface ISplashPresenter {
 
     void takeView(ISplashView iSplashView);
@@ -16,8 +12,4 @@ public interface ISplashPresenter {
 
     @Nullable
     ISplashView getView();
-
-    boolean isDBEmpty();
-
-    void addMembersToDB();
 }

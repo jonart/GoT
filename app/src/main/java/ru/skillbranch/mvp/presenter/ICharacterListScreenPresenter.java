@@ -4,10 +4,6 @@ import javax.annotation.Nullable;
 
 import ru.skillbranch.mvp.view.ICharacterListView;
 
-/**
- * Created by root on 23.10.2016.
- */
-
 public interface ICharacterListScreenPresenter {
 
     void takeView(ICharacterListView iCharacterListView);
@@ -16,4 +12,6 @@ public interface ICharacterListScreenPresenter {
 
     @Nullable
     ICharacterListView getView();
+
+    void setHousePage(int i);
 }

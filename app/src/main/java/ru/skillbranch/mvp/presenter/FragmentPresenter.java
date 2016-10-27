@@ -1,52 +1,58 @@
 package ru.skillbranch.mvp.presenter;
 
-
 import java.util.List;
 
 import javax.annotation.Nullable;
 
 import ru.skillbranch.mvp.model.FragmentModel;
-import ru.skillbranch.data.network.database.Member;
+import ru.skillbranch.data.storage.models.Member;
 import ru.skillbranch.mvp.view.IFragmentView;
 
-/**
- * Created by root on 23.10.2016.
- */
+import static android.R.attr.id;
 
 public class FragmentPresenter implements IFragmentPresenter {
     private static FragmentPresenter ourInstance = new FragmentPresenter();
+
     private FragmentModel mFragmentModel;
-    private IFragmentView mFramentView;
+    private IFragmentView mView;
+
     private List<Member> mMembers;
 
-    private FragmentPresenter() {mFragmentModel = new FragmentModel();}
+    private FragmentPresenter() {
+        mFragmentModel = new FragmentModel();
+    }
 
-    public static FragmentPresenter getInstance() {return ourInstance;}
-
+    public static FragmentPresenter getInstance() {
+        return ourInstance;
+    }
 
     @Override
-    public void takeView(IFragmentView fragmentView) {
-        mFramentView = fragmentView;
+    public void takeView(IFragmentView view) {
+        mView = view;
     }
 
     @Override
     public void dropView() {
-        mFramentView = null;
+        mView = null;
     }
 
     @Override
     public void initView() {
-
+        mMembers = mFragmentModel.getUserFromDb(id);
     }
 
     @Nullable
     @Override
     public IFragmentView getView() {
-        return null;
+        return mView;
     }
 
-    public List<Member> getUser(int id){
-        mMembers = mFragmentModel.getUserFromDb(id);
+    public List<Member> getMembers(int id) {
         return mMembers;
+    }
+
+    @Override
+    public void onListItemClick(int position) {
+        mView.showMemberProfile(position);
     }
 }

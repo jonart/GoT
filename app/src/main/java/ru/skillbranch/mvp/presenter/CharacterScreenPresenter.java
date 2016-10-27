@@ -4,7 +4,7 @@ package ru.skillbranch.mvp.presenter;
 import javax.annotation.Nullable;
 
 import ru.skillbranch.mvp.model.CharacterScreenModel;
-import ru.skillbranch.data.network.database.Member;
+import ru.skillbranch.data.storage.models.Member;
 import ru.skillbranch.mvp.view.ICharacterScreenView;
 
 /**
